@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>CaptchaFace-Android by wassafr</title>
+    <title>Captchaface SDK Android by wassafr</title>
 
     <link rel="stylesheet" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/pygment_trac.css">
@@ -15,27 +15,192 @@
   <body>
     <div class="wrapper">
       <header>
-        <h1>CaptchaFace-Android</h1>
-        <p>Captchaface SDK reinvents mobile security by ensuring users of an app are real.</p>
+        <h1>Captchaface SDK Android</h1>
+        <p></p>
 
-        <p class="view"><a href="https://github.com/wassafr/CaptchaFace-Android" target="_blank">View the Project on GitHub <small>wassafr/CaptchaFace-Android</small></a></p>
+        <p class="view"><a href="https://github.com/wassafr/CaptchaFace-Android">View the Project on GitHub <small>wassafr/CaptchaFace-Android</small></a></p>
 
 
         <ul>
-          <li><a href="https://github.com/wassafr/CaptchaFace-Android/zipball/master" target="_blank">Download <strong>ZIP File</strong></a></li>
-          <li><a href="http://wassafr.github.io/CaptchaFace-Android/wassa-captchaface-1.0.0-jdoc/index.html">See <strong>Docs</strong></a></li>
-          <li><a href="https://github.com/wassafr/CaptchaFace-Android" target="_blank">View On <strong>GitHub</strong></a></li>
+          <li><a href="https://github.com/wassafr/CaptchaFace-Android/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/wassafr/CaptchaFace-Android/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/wassafr/CaptchaFace-Android">View On <strong>GitHub</strong></a></li>
         </ul>
       </header>
       <section>
-        <h3>
-<a id="welcome-to-captchaface-sdk-pages" class="anchor" href="#welcome-to-captchaface-sdk-pages" aria-hidden="true"><span class="octicon octicon-link"></span></a>Welcome to CaptchaFace SDK Pages.</h3>
+        <h1>
+<a id="captchaface" class="anchor" href="#captchaface" aria-hidden="true"><span class="octicon octicon-link"></span></a>Captchaface</h1>
 
-<p>Captchaface reinvents mobile security by ensuring users of an app is real. If you ever need to secure content or simply control the submission of a form, Captchaface will ask users to move their head and show emotions to prove they are real humans.</p>
+<p>CaptchaFace is a tool that allows you to know if a mobile user is really human by identification of several visual steps through the camera.</p>
+
+<h2>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installation</h2>
+
+<ol>
+<li>Download the <a href="https://github.com/wassafr/CaptchaFace-Android">latest code version</a>.</li>
+<li>Drag and drop the <strong>armeabi-v7a</strong> directory from the archive in your project navigator under <strong>libs</strong>.</li>
+<li>Drag and drop the <strong>wassa</strong> directory from the archive in your project navigator under <strong>assets</strong>.</li>
+<li>Drag and drop the <strong>wassa-captchaface.jar</strong> from the archive in your project navigator under <strong>libs</strong> and include it in built-path.</li>
+</ol>
+
+<h2>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h2>
+
+<p>To run the example project, clone the repo.</p>
+
+<p>Make sure you also see <a href="https://github.com/wassafr/CaptchaFace-Android">CaptchaFace documentation on</a>.</p>
+
+<h3>
+<a id="basics" class="anchor" href="#basics" aria-hidden="true"><span class="octicon octicon-link"></span></a>Basics</h3>
+
+<ol>
+<li>
+<p>Add the following code to your <strong>AndroidManifest.xml</strong> </p>
+
+<div class="highlight highlight-xml"><pre>
+    &lt;<span class="pl-ent">uses-permission</span>
+        <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">name</span>=<span class="pl-s1"><span class="pl-pds">"</span>android.permission.CAMERA<span class="pl-pds">"</span></span>
+        <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">required</span>=<span class="pl-s1"><span class="pl-pds">"</span>true<span class="pl-pds">"</span></span> /&gt;
+    &lt;<span class="pl-ent">uses-permission</span>
+        <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">name</span>=<span class="pl-s1"><span class="pl-pds">"</span>android.permission.READ_EXTERNAL_STORAGE<span class="pl-pds">"</span></span>
+        <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">required</span>=<span class="pl-s1"><span class="pl-pds">"</span>false<span class="pl-pds">"</span></span> /&gt;
+    &lt;<span class="pl-ent">uses-permission</span>
+        <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">name</span>=<span class="pl-s1"><span class="pl-pds">"</span>android.permission.INTERNET<span class="pl-pds">"</span></span>
+        <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">required</span>=<span class="pl-s1"><span class="pl-pds">"</span>false<span class="pl-pds">"</span></span> /&gt;
+    &lt;<span class="pl-ent">uses-permission</span>
+        <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">name</span>=<span class="pl-s1"><span class="pl-pds">"</span>android.permission.ACCESS_NETWORK_STATE<span class="pl-pds">"</span></span>
+        <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">required</span>=<span class="pl-s1"><span class="pl-pds">"</span>false<span class="pl-pds">"</span></span> /&gt;
+
+    &lt;<span class="pl-ent">uses-feature</span>
+        <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">name</span>=<span class="pl-s1"><span class="pl-pds">"</span>android.hardware.camera<span class="pl-pds">"</span></span>
+        <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">required</span>=<span class="pl-s1"><span class="pl-pds">"</span>true<span class="pl-pds">"</span></span> /&gt;
+    &lt;<span class="pl-ent">uses-feature</span>
+        <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">name</span>=<span class="pl-s1"><span class="pl-pds">"</span>android.hardware.camera.autofocus<span class="pl-pds">"</span></span>
+        <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">required</span>=<span class="pl-s1"><span class="pl-pds">"</span>false<span class="pl-pds">"</span></span> /&gt;
+    &lt;<span class="pl-ent">uses-feature</span>
+        <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">name</span>=<span class="pl-s1"><span class="pl-pds">"</span>android.hardware.camera.front<span class="pl-pds">"</span></span>
+        <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">required</span>=<span class="pl-s1"><span class="pl-pds">"</span>false<span class="pl-pds">"</span></span> /&gt;
+    &lt;<span class="pl-ent">uses-feature</span>
+        <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">name</span>=<span class="pl-s1"><span class="pl-pds">"</span>android.hardware.camera.front.autofocus<span class="pl-pds">"</span></span>
+        <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">required</span>=<span class="pl-s1"><span class="pl-pds">"</span>false<span class="pl-pds">"</span></span> /&gt;
+</pre></div>
+</li>
+<li>
+<p>Plugin and files loading - Add the following line to your <strong>Application.java</strong> , onCreate()</p>
+
+<div class="highlight highlight-java"><pre>
+    <span class="pl-stj">CaptchaUtils</span><span class="pl-k">.</span>loadPlugin(<span class="pl-v">this</span>);
+</pre></div>
+</li>
+<li>
+<p>Render - Add the following line to your <strong>layout_activity.xml</strong></p>
+
+<div class="highlight highlight-xml"><pre>
+    &lt;<span class="pl-ent">com</span>.wassa.noyau.capture.input.KFrameRender
+        <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">id</span>=<span class="pl-s1"><span class="pl-pds">"</span>@+id/render<span class="pl-pds">"</span></span>
+        <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">layout_width</span>=<span class="pl-s1"><span class="pl-pds">"</span>match_parent<span class="pl-pds">"</span></span>
+        <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">layout_height</span>=<span class="pl-s1"><span class="pl-pds">"</span>match_parent<span class="pl-pds">"</span></span> /&gt;
+</pre></div>
+</li>
+<li>
+<p>Allow "Keep Screen ON" - Add the following line to your onCreate.</p>
+
+<div class="highlight highlight-java"><pre>
+    <span class="pl-c">// this.setContentView(your_layout_activity.xml);</span>
+    <span class="pl-v">this</span><span class="pl-k">.</span>getWindow()<span class="pl-k">.</span>addFlags(<span class="pl-stj">WindowManager</span><span class="pl-k">.</span><span class="pl-stj">LayoutParams</span><span class="pl-c1"><span class="pl-k">.</span>FLAG_KEEP_SCREEN_ON</span>);
+</pre></div>
+</li>
+<li>
+<p>Setup your first CaptchaFace service - Add the following code to your onResume()</p>
+
+<div class="highlight highlight-java"><pre>
+    <span class="pl-k">if</span> (<span class="pl-k">!</span><span class="pl-stj">CaptchaUtils</span><span class="pl-k">.</span>isInit()) 
+    {
+        <span class="pl-stj">CaptchaServiceStandalone</span> newService <span class="pl-k">=</span> <span class="pl-stj">CaptchaUtils</span><span class="pl-k">.</span>createInstance(<span class="pl-v">this</span>, <span class="pl-c1">LICENCE_KEY</span>);
+        newService<span class="pl-k">.</span>setRenderToMat(<span class="pl-c1">true</span>);
+        newService<span class="pl-k">.</span>load(<span class="pl-stj">KInputCamId</span><span class="pl-c1"><span class="pl-k">.</span>CAMERA_ID_FRONT</span>);
+    }
+</pre></div>
+
+<div class="highlight highlight-java"><pre>
+    <span class="pl-s">final</span> <span class="pl-stj">CaptchaServiceStandalone</span> service <span class="pl-k">=</span> <span class="pl-stj">CaptchaUtils</span><span class="pl-k">.</span>getInstance();
+</pre></div>
+
+<div class="highlight highlight-java"><pre>
+    service<span class="pl-k">.</span>setOnFinished(<span class="pl-k">new</span> <span class="pl-stj">CaptchaOnFinished</span>() {
+        <span class="pl-st">@Override</span>
+        <span class="pl-s">public</span> <span class="pl-st">void</span> <span class="pl-en">onFinished</span>(<span class="pl-st">long</span> <span class="pl-v">_faceId</span>, <span class="pl-st">long</span> <span class="pl-v">_total</span>, <span class="pl-st">long</span> <span class="pl-v">_success</span>) {
+            <span class="pl-c">// YOUR CODE</span>
+        }
+    });
+</pre></div>
+
+<div class="highlight highlight-java"><pre>
+    service<span class="pl-k">.</span>setOnFailed(<span class="pl-k">new</span> <span class="pl-stj">CaptchaOnFailed</span>() {
+        <span class="pl-st">@Override</span>
+        <span class="pl-s">public</span> <span class="pl-st">void</span> <span class="pl-en">onFailed</span>(<span class="pl-st">int</span> <span class="pl-v">_codeError</span>) {
+            <span class="pl-c">// YOUR CODE</span>
+            <span class="pl-c">// _codeError = 1 -&gt; Network is required to lauch captchaface.</span>
+            <span class="pl-c">// _codeError = 2 -&gt; Unable to contact captchaface server.</span>
+            <span class="pl-c">// _codeError = 3 -&gt; The supplied licence key is invalid.</span>
+        }
+    });
+</pre></div>
+</li>
+<li>
+<p>Be smart and allow to release the service during background - Add the following line to your onPause() (You may have to use the main thread with <strong>Handler</strong>)</p>
+
+<div class="highlight highlight-java"><pre>
+    <span class="pl-stj">CaptchaUtils</span><span class="pl-k">.</span>destroyInstance();  
+</pre></div>
+</li>
+<li>
+<p>Submit random scenario</p>
+
+<div class="highlight highlight-java"><pre>
+    service<span class="pl-k">.</span>submitScenario(min_random, max_random, max_time_to_process, time_to_wait_before_next_event);
+</pre></div>
+</li>
+<li>
+<p>(bis) Submit your own scenario</p>
+
+<div class="highlight highlight-java"><pre>
+    service<span class="pl-k">.</span>submitScenario(array_of_motion_event, max_time_to_process, time_to_wait_before_next_event);
+</pre></div>
+</li>
+<li>
+<p>Start the record and the preview</p>
+
+<div class="highlight highlight-java"><pre>
+    service<span class="pl-k">.</span>record(<span class="pl-stj">MyActivity</span><span class="pl-k">.</span><span class="pl-v">this</span>, (<span class="pl-stj">KFrameRender</span>) findViewById(<span class="pl-stj">R</span><span class="pl-k">.</span>id<span class="pl-k">.</span>render), <span class="pl-c1">true</span>, <span class="pl-c1">true</span>);
+</pre></div>
+</li>
+<li>
+<p>Start the scenario !</p>
+
+<div class="highlight highlight-java"><pre>
+    service<span class="pl-k">.</span>startScenario();
+</pre></div>
+</li>
+</ol>
+
+<h2>
+<a id="requirements" class="anchor" href="#requirements" aria-hidden="true"><span class="octicon octicon-link"></span></a>Requirements</h2>
+
+<ul>
+<li>Eclipse 4.3+</li>
+<li>Android SDK 14+</li>
+<li>armeabi-v7a</li>
+</ul>
+
+<h2>
+<a id="author" class="anchor" href="#author" aria-hidden="true"><span class="octicon octicon-link"></span></a>Author</h2>
+
+<p>Wassa, <a href="mailto:contact@wassa.fr">contact@wassa.fr</a></p>
       </section>
       <footer>
-        <p>This project is maintained by <a href="https://github.com/wassafr" target="_blank">wassafr</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist" target="_blank">orderedlist</a></small></p>
+        <p>This project is maintained by <a href="https://github.com/wassafr">wassafr</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
       </footer>
     </div>
     <script src="javascripts/scale.fix.js"></script>
