@@ -13,7 +13,7 @@ CaptchaFace is a tool that allows you to know if a mobile user is really human b
 
 To run the example project, clone the repo.
 
-Make sure you also see [CaptchaFace documentation on](https://github.com/wassafr/CaptchaFace-Android).
+Make sure you also see [CaptchaFace documentation](http://wassafr.github.io/CaptchaFace-Android/wassa-captchaface-1.0.0-jdoc/index.html).
 
 ###Basics
 1. Add the following code to your **AndroidManifest.xml** 
