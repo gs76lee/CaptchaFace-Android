@@ -4,7 +4,7 @@ CaptchaFace is a tool that allows you to know if a mobile user is really human b
 
 ## Installation
 
-1. Download the [latest code version](https://github.com/kTrn/CaptchaFace-android/archive/master.zip).
+1. Download the [latest code version](https://github.com/wassafr/CaptchaFace-Android).
 2. Drag and drop the **armeabi-v7a** directory from the archive in your project navigator under **libs**.
 3. Drag and drop the **wassa** directory from the archive in your project navigator under **assets**.
 4. Drag and drop the **wassa-captchaface.jar** from the archive in your project navigator under **libs** and include it in built-path.
@@ -13,7 +13,7 @@ CaptchaFace is a tool that allows you to know if a mobile user is really human b
 
 To run the example project, clone the repo.
 
-Make sure you also see [CaptchaFace documentation on ???](http://wassa.org/CaptchaFace).
+Make sure you also see [CaptchaFace documentation on](https://github.com/wassafr/CaptchaFace-Android).
 
 ###Basics
 1. Add the following code to your **AndroidManifest.xml** 
