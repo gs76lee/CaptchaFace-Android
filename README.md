@@ -1,4 +1,4 @@
-®# CaptchaFace
+# Captchaface
 
 CaptchaFace is a tool that allows you to know if a mobile user is really human by identification of several visual steps through the camera.
 
