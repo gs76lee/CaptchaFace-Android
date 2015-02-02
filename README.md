@@ -77,7 +77,7 @@ Make sure you also see [CaptchaFace documentation](http://wassafr.github.io/Capt
 		
     ```
 
-5. Setup your first CaptchaFace service - Add the following code to your onResume()
+5. Setup your first CaptchaFace service and set your own **LICENCE_KEY** - Add the following code to your onResume()
 
     ```java
     
@@ -126,10 +126,18 @@ Make sure you also see [CaptchaFace documentation](http://wassafr.github.io/Capt
   
    ```
 
-7. Submit random scenario
+7. Submit a default or random scenario
 
     ```java
-    
+    	// DEFAULT
+        service.submitScenario();
+        
+    ```
+
+    ```java
+    	// RANDOM
+    	// min_random : Minimum action to do
+    	// min_random : Maximum action to do
         service.submitScenario(min_random, max_random, max_time_to_process, time_to_wait_before_next_event);
         
     ```
@@ -141,6 +149,7 @@ Make sure you also see [CaptchaFace documentation](http://wassafr.github.io/Capt
         service.submitScenario(array_of_motion_event, max_time_to_process, time_to_wait_before_next_event);
         
     ```
+    
  
 9. Start the record and the preview
 

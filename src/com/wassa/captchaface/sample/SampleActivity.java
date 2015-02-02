@@ -25,9 +25,7 @@ public class SampleActivity extends Activity {
 		super.onResume();
 		if (!CaptchaUtils.isInit()) 
 	    {
-	        CaptchaServiceStandalone newService = CaptchaUtils.createInstance(this, "<LICENCE_KEY>");
-	        newService.setRenderToMat(true);
-	        newService.load(KInputCamId.CAMERA_ID_FRONT);
+	        CaptchaUtils.createInstance(this, "<LICENCE_KEY>").load(KInputCamId.CAMERA_ID_FRONT);
 	    }
 		
 		final CaptchaServiceStandalone service = CaptchaUtils.getInstance();
