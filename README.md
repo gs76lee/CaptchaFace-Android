@@ -4,7 +4,7 @@ CaptchaFace is a tool that allows you to know if a mobile user is really human b
 
 ## Installation
 
-1. Download the [latest code version](https://github.com/wassafr/CaptchaFace-Android).
+1. Download the [latest bundle](https://github.com/wassafr/CaptchaFace-Android/archive/master.zip).
 2. Drag and drop the **armeabi-v7a** directory from the archive in your project navigator under **libs**.
 3. Drag and drop the **wassa** directory from the archive in your project navigator under **assets**.
 4. Drag and drop the **wassa-captchaface.jar** from the archive in your project navigator under **libs** and include it in built-path.
@@ -81,21 +81,24 @@ Make sure you also see [CaptchaFace documentation](http://wassafr.github.io/Capt
 
     ```java
     
+    	// Define and setup captchaface service
         if (!CaptchaUtils.isInit()) 
         {
-            CaptchaServiceStandalone newService = CaptchaUtils.createInstance(this, LICENCE_KEY);
-            newService.setRenderToMat(true);
-            newService.load(KInputCamId.CAMERA_ID_FRONT);
+            CaptchaUtils
+            	.createInstance(this, LICENCE_KEY)    
+            	.load(KInputCamId.CAMERA_ID_FRONT); // Default camera (id) to select
         }
         
     ```
     ```java
-    
+    	
+    	// Retrieve captchaface service anywhere
         final CaptchaServiceStandalone service = CaptchaUtils.getInstance();
         
     ```
     ```java
     
+    	// Attach onFinish listener
         service.setOnFinished(new CaptchaOnFinished() {
             @Override
             public void onFinished(long _faceId, long _total, long _success) {
@@ -105,7 +108,8 @@ Make sure you also see [CaptchaFace documentation](http://wassafr.github.io/Capt
         
     ```
     ```java
-    
+    	
+    	// Attach onFailed listener
         service.setOnFailed(new CaptchaOnFailed() {
             @Override
             public void onFailed(int _codeError) {
@@ -122,6 +126,7 @@ Make sure you also see [CaptchaFace documentation](http://wassafr.github.io/Capt
 
    ```java
    
+	   	// Destroy current instance
         CaptchaUtils.destroyInstance();  
   
    ```
@@ -129,13 +134,15 @@ Make sure you also see [CaptchaFace documentation](http://wassafr.github.io/Capt
 7. Submit a default or random scenario
 
     ```java
-    	// DEFAULT
+    
+    	// A default scenario
         service.submitScenario();
         
     ```
 
     ```java
-    	// RANDOM
+    
+    	// Random scenario
     	// min_random : Minimum action to do
     	// min_random : Maximum action to do
         service.submitScenario(min_random, max_random, max_time_to_process, time_to_wait_before_next_event);
@@ -146,6 +153,7 @@ Make sure you also see [CaptchaFace documentation](http://wassafr.github.io/Capt
     
     ```java
     
+    	// Custom scenario
         service.submitScenario(array_of_motion_event, max_time_to_process, time_to_wait_before_next_event);
         
     ```
@@ -155,6 +163,7 @@ Make sure you also see [CaptchaFace documentation](http://wassafr.github.io/Capt
 
     ```java
     
+    	// Start camera record
         service.record(MyActivity.this, (KFrameRender) findViewById(R.id.render), true, true);
         
     ```
@@ -170,11 +179,11 @@ Make sure you also see [CaptchaFace documentation](http://wassafr.github.io/Capt
 
 ## Requirements
 
-* Eclipse 4.3+
-* Android SDK 14+
-* armeabi-v7a
+* Eclipse 4.3+ , http://eclipse.org
+* Android SDK 14+ , http://developer.android.com/sdk/installing/index.html
+* Android NDK (Optional) , https://developer.android.com/tools/sdk/ndk/index.html
+* Arch : armeabi-v7a
 
 ## Author
 
 Wassa, contact@wassa.fr
-
